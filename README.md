@@ -1,2 +1,2 @@
-# Graph Explorer
+# NeuroData's Graph Explorer
 Web-based graph analytics and some visualization
