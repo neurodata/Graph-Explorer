@@ -14,3 +14,11 @@ To run:
 2. ```cd /srv/shinyapps/```
 3. ```git pull```
 4. (maybe restart shiny)
+
+# If docker container goes down
+
+1. 
+
+# If we want to add more dependencies to installation
+
+- Update dockerfile
