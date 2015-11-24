@@ -17,7 +17,7 @@ To run:
 
 # If docker container goes down
 
-1. 
+1. ```./graphexplorerstart.sh```
 
 # If we want to add more dependencies to installation
 
