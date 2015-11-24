@@ -6,7 +6,11 @@ To run:
 1. go to the shiny dir
 2. start R
 3. type `library('shiny')`
-4. type `updateFlashRPackages()`
 5. type `runApp()`
 
+# Deploy Updates
 
+1. log in to brainapps1.neurodata.io
+2. ```cd /srv/shinyapps/```
+3. ```git pull```
+4. (maybe restart shiny)
