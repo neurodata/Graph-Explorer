@@ -10,7 +10,7 @@ To run:
 
 # Deploy Updates
 
-1. log in to 128.220.176.7
+1. log in to brainapps1.neurodata.io
 2. ```cd /srv/shinyapps/```
 3. ```git pull```
 4. (maybe restart shiny)
