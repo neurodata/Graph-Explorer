@@ -9,3 +9,6 @@ RUN apt-get install -y \
 
 # install shiny packages
 RUN R -e "install.packages(c('data.table', 'FNN', 'igraph', 'rgl', 'shinyBS', 'shinyRGL', 'scrapeR', 'rARPACK', 'DT', 'mclust', 'Rtsne'), repos='https://cran.rstudio.com/')"
+
+# install data analytics website packages
+RUN R -e "install.packages(c('robustbase', 'reshape', 'fastcluster', 'ggdendro', 'tsne'),  repos='https://cran.rstudio.com/')"
