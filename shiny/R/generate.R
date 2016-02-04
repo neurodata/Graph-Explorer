@@ -54,7 +54,23 @@ generateGraph <- function(genMethod,parameters)
 		                          directed=directed)
 	} else if(genMethod=='Atlas'){
 	   g <- graph_from_atlas(parameters$atlas)
-	} else if(genMethod=='Tree'){
+	} else if(genMethod=='Generated Worm'){
+	  library(rvest)
+	  page <- read_html("http://openconnecto.me/mrdata/static/graphs/fly/")
+	  dirs <- page %>% html_nodes("body") %>% html_nodes("a") %>% html_text()
+	  dirs <- dirs[-1]
+	  
+	  files <- vector('list',length(dirs))
+	  for(i in 1:length(dirs)){
+	    dir <- dirs[i]
+	    url <- paste("http://openconnecto.me/mrdata/static/graphs/fly/",dir,sep="/")
+	    pagei <- read_html(url)
+	    files[[i]] <- pagei %>% html_nodes("body") %>% html_nodes("a") %>% html_text()
+	    files[[i]] <- paste0(url,files[[i]][-1])
+	  }
+	  
+	  g <- read.graph(files[[1]][1],format='graphml')
+	}else if(genMethod=='Tree'){
 	   g <- make_tree(n,
 		               children=parameters$children,
 							mode=parameters$mode)

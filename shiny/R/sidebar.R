@@ -109,8 +109,7 @@ makeSidebar <- function()
 				  p("At each time step a new vertex is added and m new",
 				    "edges are added (uniformly at random if citation is FALSE,",
 					 "otherwise from the new vertex to a uniformly chosen old",
-					 "vertex.")
-			  ),
+					 "vertex.")),
 		     conditionalPanel(
 			     condition="input.genMethod=='Geometric Random Graph'",
 				  p("First n points are generated uniformly on a square (or",
@@ -138,7 +137,9 @@ makeSidebar <- function()
 					 "'graph_from_atlas' in the 'igraph'",
 					 "package. The graph number '0' which is the empty graph",
 					 "on zero vertices is not an option in this tool.")),
-		     conditionalPanel(
+          condition="input.genMethod=='Generated Worm'",
+           p("A worm.")),
+           conditionalPanel(
 			     condition="input.genMethod=='Watts Strogatz'",
 				  p("A small world graph. A lattice is created with",
 				    "dimension 'dim', number of vertices along each axis of",
@@ -160,32 +161,11 @@ makeSidebar <- function()
 					 "the model. Then click 'Generate' to generate the graph"),
 				  generateParameters(),
 				  actionButton(inputId='GenerateGraph',label="Generate")
-			  ))),
+			  )),
   numericInput(inputId='seed',label="Random Number Seed",value=seed,
       min=1,max=100000,step=1),
             p("Clicking on `Plotting Parameters' opens/closes a menu of options for the plot."),
-            plottingOpts(),
-	 bsCollapse(
-		 bsCollapsePanel("Save State",
-           p(paste("Type in a base filename for the saved file.",
-                   "This should be a pure root filename, no directory or",
-                   "extensions.",
-                   "If no filename is given, the default",
-                   "is a file with a unique date/time in the name.")),
-           textInput(inputId='outputfilename',label='Output Base Filename',
-			           value=""),
-               p(paste("The state file will be saved in the directory",
-                       "set in your browser as the downloads directory",
-                       "The file will be an RData file.")),
-               downloadButton('downloadState','Download')),
-                  id='downloadCollapse'),
-	 bsCollapse(
-		 bsCollapsePanel("Restore State",
-               p(paste("Restoring the state restores all the variables",
-                       "selected in the GUI with the exception of the",
-                       "graph file.")),
-              fileInput(inputId="saveFile",label="Restore File",
-                        accept="RData")),id='uploadCollapse')
+            plottingOpts()
 
   )
 }

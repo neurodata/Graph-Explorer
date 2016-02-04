@@ -23,7 +23,8 @@ generateSidebar <- function()
 									'Forest Fire',
 									'Aging Prefatt',
 									'de Bruijn',
-									'Kautz'),
+									'Kautz',
+									'Generated Worm'),
 					 selected="Erdos Renyi")
 }
 
@@ -32,11 +33,11 @@ generateParameters <- function()
     bsCollapse(
 		 bsCollapsePanel(title="Parameters",
 			  conditionalPanel(
-			     condition="input.genMethod!='Famous' & input.genMethod!='Atlas' & input.genMethod!='de Bruijn'",
+			     condition="input.genMethod!='Famous' & input.genMethod!='Atlas' & input.genMethod!='Generated Worm' & input.genMethod!='de Bruijn'",
 			  sliderInput(inputId='genN',label="n",min=10,max=10000,
 			              value=100,step=10)),
 			  conditionalPanel(
-			     condition="input.genMethod != 'Watts Strogatz' & input.genMethod != 'Famous' & input.genMethod!='Atlas'",
+			     condition="input.genMethod != 'Watts Strogatz' & input.genMethod != 'Famous' & input.genMethod!='Atlas' & input.genMethod!='Generated Worm'",
 				  checkboxInput(inputId='genDirected',label="Directed",
 									 value=FALSE)),
 		     conditionalPanel(
