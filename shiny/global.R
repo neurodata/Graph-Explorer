@@ -12,6 +12,7 @@ library(DT)
 library(scales)
 library(mclust)
 library(Rtsne)
+library(rvest)
 #library(corrplot)
 #library(dendextend)
 #library(fpc)
@@ -61,8 +62,8 @@ plot.invariants <- c("Degree Distribution",
                 "Page Rank")
 
 
-openconnectome.dir <- "http://openconnecto.me/graph-services/download/"
-openconnectome.graphs <- getOpenConnectome(openconnectome.dir)
+#openconnectome.dir <- "http://openconnecto.me/graph-services/download/"
+#openconnectome.graphs <- getOpenConnectome(openconnectome.dir)
 
 invariants <- data.frame(Invariant=c(
                            "Order",

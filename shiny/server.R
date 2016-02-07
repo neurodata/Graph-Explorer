@@ -111,6 +111,14 @@ observe({
 				  }))
 			  })
 		  }
+	  } else if(input$whereGraph=='From OpenConnectome'){
+		  if(nchar(input$graphOCFile)>5){
+			  cat("OpenConnectome file:",input$graphOCFile,"\n")
+			  t1 <- system.time(g <- read.graph(input$graphOCFile,
+					  format='graphml'))
+			  cat("File read\n")
+			  print(t1)
+		  }
 	  } else {
 		  if(!is.null(input$graphFile)){
 			  format <- "graphml"

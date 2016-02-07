@@ -2,7 +2,9 @@ makeSidebar <- function()
 {
   sidebarPanel(
   radioButtons(inputId="whereGraph",label="Get a Graph",
-               choices=c("From Disk","Generate"),selected="From Disk"),
+               choices=c("From Disk",
+					"From OpenConnectome",
+					"Generate"),selected="From Disk"),
   conditionalPanel(
       condition="input.whereGraph=='From Disk'",
 		  p(paste("Select a graph to load.",
@@ -15,6 +17,13 @@ makeSidebar <- function()
        "Zipped graphs (humans) do not seem to load correctly at this time.",
           collapse=" ")),
         fileInput(inputId="graphFile",label="File",accept="graphml")),
+  conditionalPanel(
+      condition="input.whereGraph=='From OpenConnectome'",
+		  p(paste("Select a graph to load.",
+          "Beware that human graphs are huge and will",
+			 "likely take hours to download.")),
+        selectInput(inputId="graphOCFile",label="File",
+		           choices=getOpenConnectome())),
   conditionalPanel(
       condition="input.whereGraph=='Generate'",
 		  wellPanel(
