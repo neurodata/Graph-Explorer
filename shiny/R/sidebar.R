@@ -4,7 +4,7 @@ makeSidebar <- function()
   radioButtons(inputId="whereGraph",label="Get a Graph",
                choices=c("From Disk",
 					"From OpenConnectome",
-					"Generate"),selected="From Disk"),
+					"Generate"),selected="Generate"),
   conditionalPanel(
       condition="input.whereGraph=='From Disk'",
 		  p(paste("Select a graph to load.",
