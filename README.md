@@ -11,8 +11,8 @@ To run:
 # Deploy Updates
 
 1. log in to brainapps1.neurodata.io
-2. ```cd /srv/shinyapps/```
-3. ```git pull```
+2. ```cd /srv/shinyapps/Graph-Explorer```
+3. ```git pull deploy```
 4. (maybe restart shiny)
 
 # If docker container goes down
