@@ -23,8 +23,7 @@ generateSidebar <- function()
 									'Forest Fire',
 									'Aging Prefatt',
 									'de Bruijn',
-									'Kautz',
-									'Generated Worm'),
+									'Kautz'),
 					 selected="Erdos Renyi")
 }
 

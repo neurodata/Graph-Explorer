@@ -1,6 +1,6 @@
 makeSidebar <- function()
-{
-  sidebarPanel(
+ {
+sidebarPanel(
   radioButtons(inputId="whereGraph",label="Get a Graph",
                choices=c("From Disk",
 					"From OpenConnectome",
@@ -146,9 +146,7 @@ makeSidebar <- function()
 					 "'graph_from_atlas' in the 'igraph'",
 					 "package. The graph number '0' which is the empty graph",
 					 "on zero vertices is not an option in this tool.")),
-          condition="input.genMethod=='Generated Worm'",
-           p("A worm.")),
-           conditionalPanel(
+         conditionalPanel(
 			     condition="input.genMethod=='Watts Strogatz'",
 				  p("A small world graph. A lattice is created with",
 				    "dimension 'dim', number of vertices along each axis of",
@@ -175,6 +173,6 @@ makeSidebar <- function()
       min=1,max=100000,step=1),
             p("Clicking on `Plotting Parameters' opens/closes a menu of options for the plot."),
             plottingOpts()
-
   )
-}
+  )
+ }

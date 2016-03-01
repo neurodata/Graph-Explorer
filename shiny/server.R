@@ -25,8 +25,6 @@ observe({
 						  parameters$famous <- input$genFamous
 					  } else if(input$genMethod=='Atlas'){
 						  parameters$atlas <- input$genAtlas
-					  } else if(input$genMethod=='Generated Worm'){
-					    parameters$generatedworm <- input$genGeneratedworm
 					  } else if(input$genMethod=='Wheel'){
 						  parameters$mode <- input$genMode
 					  } else if(input$genMethod=='Barabasi'){
