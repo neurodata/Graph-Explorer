@@ -16,6 +16,6 @@ RUN R -e "install.packages(c('data.table', 'FNN', 'igraph', 'rgl', 'shinyBS', 's
 RUN R -e "install.packages(c('robustbase', 'reshape', 'fastcluster', 'ggdendro', 'tsne','htmltools','grid','gtable'),  repos='https://cran.rstudio.com/')"
 
 # install graphviz packages
-RUN R -e "install.packages(c('plotly', 'networkD3'), repos='https://cran.rstudio.com/')" 
+RUN R -e "install.packages(c('plotly', 'networkD3', 'pairsD3'), repos='https://cran.rstudio.com/')" 
 
 RUN R -e "devtools::install_github('rstudio/DT')"
