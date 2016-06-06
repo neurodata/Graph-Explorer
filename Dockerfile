@@ -7,7 +7,10 @@ RUN apt-get install -y \
 	libglu1-mesa-dev \
 	libxml2 libxml2-dev \
 	python-igraph \ 
-	libssl-dev 
+	libssl-dev
+
+RUN apt-get update
+RUN apt-get install -y curl
 
 # install shiny packages
 RUN R -e "install.packages(c('data.table', 'FNN', 'igraph', 'rgl', 'shinyBS', 'shinyRGL', 'scrapeR', 'irlba', 'Matrix', 'DT', 'scales', 'rARPACK', 'mclust', 'Rtsne', 'devtools', 'rvest'), repos='https://cran.rstudio.com/')"
@@ -16,6 +19,6 @@ RUN R -e "install.packages(c('data.table', 'FNN', 'igraph', 'rgl', 'shinyBS', 's
 RUN R -e "install.packages(c('robustbase', 'reshape', 'fastcluster', 'ggdendro', 'tsne','htmltools','grid','gtable'),  repos='https://cran.rstudio.com/')"
 
 # install graphviz packages
-RUN R -e "install.packages(c('plotly', 'networkD3', 'pairsD3'), repos='https://cran.rstudio.com/')" 
+RUN R -e "install.packages(c('shiny', 'plotly', 'networkD3', 'pairsD3', 'plyr', 'shinydashboard'), repos='https://cran.rstudio.com/')" 
 
 RUN R -e "devtools::install_github('rstudio/DT')"
